@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>The most secure domain</title>
+    </head>
+    <body>
+        <h1>Super secret list of all users (only for admin users)</h1>
+        <p> List of users and passwords: </p>
+        
+        <ul>
+            <li th:each="user : ${users}">
+                <span th:text="${user}">item name</span>
+            </li>
+        </ul>
+        
+        <p> Participants in the event: </p>
+        
+        <ul>
+            <li th:each="participant : ${participants}">
+                Name: <span th:text="${participant.name}">name</span>
+                Address: <span th:text="${participant.address}">address</span>
+            </li>
+        </ul>
+        
+    </body>
+</html>
